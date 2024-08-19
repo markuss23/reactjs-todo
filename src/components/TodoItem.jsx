@@ -3,7 +3,11 @@ import PropTypes from "prop-types";
 const TodoItem = ({ todo, onComplete }) => {
   return (
     <li className="list-group-item">
-      {todo.title}
+      {todo.completed ? (
+        <p>{todo.title}</p>
+      ) : (
+        <p><s>{todo.title}</s></p>
+      )}
       {todo.completed ? (
         <div className="btn-sm float-end">Completed</div>
       ) : (
@@ -11,7 +15,7 @@ const TodoItem = ({ todo, onComplete }) => {
           className="btn btn-danger btn-sm float-end"
           onClick={() => onComplete(todo.id)}
         >
-          Complete
+          Completed
         </button>
       )}
     </li>

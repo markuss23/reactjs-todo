@@ -29,7 +29,13 @@ const TodoMain = () => {
         <ul className="list-group">
           {todoList.map((todo, idx) => (
             <li key={idx} className="list-group-item">
+              {todo.completed ? (
+                <s>{todo.title}</s>
+              ) : (
+                <span>
               {todo.title}
+                </span>
+              )}{" "}
               {todo.completed ? (
                 <div className="btn-sm float-end">Completed</div>
               ) : (

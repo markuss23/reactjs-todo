@@ -19,7 +19,6 @@ const TodoControl = ({ handleAddTodo }) => {
   };
 
   const handleInputChange = (value) => {
-    console.log(value);
     if (value) {
       handleError(false);
       setInputValue(value);
